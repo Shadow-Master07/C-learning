@@ -1,0 +1,18 @@
+COMPILER=g++
+
+main: main.o playerClass.o
+	$(COMPILER) -o main.exe main.o playerClass.o
+
+main.o: main.cpp structLocus.h playerClass.h
+	$(COMPILER) -c main.cpp
+
+playerClass.o: playerClass.cpp structLocus.h playerClass.h
+	$(COMPILER) -c playerClass.cpp
+
+run:
+	cls
+	./main.exe
+
+clean:
+	del *.o
+	del *.exe

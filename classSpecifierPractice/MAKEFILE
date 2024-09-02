@@ -1,0 +1,25 @@
+main: main.o person.o player.o nurse.o engineer.o
+	g++ -o main.exe main.o person.o player.o nurse.o engineer.o
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+person.o: person.cpp person.h
+	g++ -c person.cpp
+
+player.o: player.cpp player.h
+	g++ -c player.cpp
+
+nurse.o: nurse.cpp nurse.h
+	g++ -c nurse.cpp
+
+engineer.o: engineer.cpp engineer.h
+	g++ -c engineer.cpp
+
+clean:
+	del *.o
+	del main.exe
+
+run:
+	./main.exe
+

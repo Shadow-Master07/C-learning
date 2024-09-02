@@ -1,0 +1,24 @@
+main: main.o circle.o oval.o shape.o
+	g++ -o main.exe main.o circle.o oval.o shape.o
+
+main.o: main.cpp oval.h circle.h shape.h
+	g++ -c main.cpp
+
+circle.o: circle.cpp circle.h
+	g++ -c circle.cpp
+
+oval.o: oval.cpp oval.h
+	g++ -c oval.cpp
+
+shape.o: shape.cpp shape.h
+	g++ -c shape.cpp
+
+clean:
+	del *.o
+	del main.exe
+	cls
+
+run:
+	cls
+	./main.exe
+
